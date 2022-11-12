@@ -52,7 +52,7 @@ router.post(
   "/update",
   body("title").exists().isString(),
   body("body").exists().isString(),
-  body("producId").exists().isString(),
+  body("productId").exists().isString(),
   handleInputErrors,
   createUpdate
 );
@@ -61,7 +61,7 @@ router.put(
   "/update/:id",
   body("title").optional(),
   body("body").optional(),
-  body("status").isIn(["IN_PROGRESS", "SHIPPED", "DEPRECATED"]),
+  body("status").optional(),
   body("version").optional(),
   handleInputErrors,
   updateUpdate
