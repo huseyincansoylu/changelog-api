@@ -69,31 +69,4 @@ router.put(
 
 router.delete("/update/:id", deleteUpdate);
 
-/**
- * UpdatePoint
- */
-
-router.get("/updatepoint", (req, res) => {});
-
-router.get("/updatepoint/:id", (req, res) => {});
-
-router.put(
-  "/updatepoint",
-  body("name").optional().isString(),
-  body("description").optional().isString(),
-  handleInputErrors,
-  (req, res) => {}
-);
-
-router.post(
-  "/updatepoint/:id",
-  body("name").isString(),
-  body("description").isString(),
-  body("updateId").exists().isString(),
-  handleInputErrors,
-  (req, res) => {}
-);
-
-router.delete("/updatepoint/:id", (req, res) => {});
-
 export default router;
